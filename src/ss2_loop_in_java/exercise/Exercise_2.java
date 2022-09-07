@@ -21,7 +21,7 @@ public class Exercise_2 {
                 System.out.print(i+" ");
                 n++;
             }
-            if(n==20){
+            if(n==numbers){
                 break;
             }
         }

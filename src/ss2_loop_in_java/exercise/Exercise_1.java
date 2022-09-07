@@ -12,10 +12,10 @@ public class Exercise_1 {
                 "3.Print isosceles triangle\n" +
                 "\n" +
                 "4.Exit");
-        byte input = sc.nextByte();
+        int input = Integer.parseInt(sc.nextLine());
         while (input<=0 || input > 4){
             System.out.println("Retype: ");
-            input = sc.nextByte();
+            input = Integer.parseInt(sc.nextLine());
         }
         switch (input){
             case 1:
@@ -31,16 +31,57 @@ public class Exercise_1 {
                     for(int j=1; j<i; j++){
                         System.out.print("*");
                     }
+
                     System.out.println();
                 }
-                break;
-            case 3:
+                System.out.println("------------------------------------");
+                for(int i=1; i<=5; i++){
+                    for (int j = 5; j >= i ; j--) {
+                        System.out.print(" ");
+                    }
+                    for(int j=1; j<i; j++){
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+
+                System.out.println("------------------------------------");
                 for(int i=7;i>=1;i--){
                     for(int j=1;j<=i;j++){
                         System.out.print("*");
                     }
                     System.out.println();
                 }
+                System.out.println("------------------------------------");
+                for (int i = 1; i <=7 ; i++) {
+                    for (int j = 1; j < i; j++) {
+                        System.out.print(" ");
+                    }
+                    for (int j = 7; j >= i ; j--) {
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+
+                break;
+            case 3:
+                System.out.println("Enter height");
+                int height = Integer.parseInt(sc.nextLine());
+                int left = height;
+                int right = height;
+                for (int i = 1; i <= height; i++) {
+                    for (int j = 1; j <2*height-1 ; j++) {
+                        if(j>=left && j<=right){
+                            System.out.print("*");
+                        } else {
+                            System.out.print(" ");
+                        }
+                    }
+                    left--;
+                    right++;
+                    System.out.println();
+                }
+
                 break;
             case 4:
                 System.out.println("Đã thoát");
