@@ -65,12 +65,28 @@ public class Exercise_1 {
 
                 break;
             case 3:
+//                System.out.println("Enter height");
+//                int height = Integer.parseInt(sc.nextLine());
+//                int left = height;
+//                int right = height;
+//                for (int i = 1; i <= height; i++) {
+//                    for (int j = 1; j <2*height-1 ; j++) {
+//                        if(j>=left && j<=right){
+//                            System.out.print("*");
+//                        } else {
+//                            System.out.print(" ");
+//                        }
+//                    }
+//                    left--;
+//                    right++;
+//                    System.out.println();
+//                }
                 System.out.println("Enter height");
                 int height = Integer.parseInt(sc.nextLine());
                 int left = height;
                 int right = height;
                 for (int i = 1; i <= height; i++) {
-                    for (int j = 1; j <2*height-1 ; j++) {
+                    for (int j = 1; j <2*height-1; j++) {
                         if(j>=left && j<=right){
                             System.out.print("*");
                         } else {
