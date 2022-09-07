@@ -35,9 +35,6 @@ public class Exercise_1 {
             }
 
         }
-
-
-
         System.out.println("Element of new arr");
         for (int i : arrNumbers) {
             System.out.print(i + "\t");
