@@ -30,11 +30,7 @@ public class Exercise_3 {
         int numCol = Integer.parseInt(sc.nextLine());
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if(numCol == j){
                     sum = sum + arr[i][numCol];
-                }
-            }
         }
 
         System.out.println("sum is: "+sum);

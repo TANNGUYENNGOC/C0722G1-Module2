@@ -32,15 +32,6 @@ public class Exercise_4 {
            sum = arr[i][i] +sum;
         }
 
-        int sum1=0;
-        int k = 0;
-        for (int i = arr.length-1; i >=0; i--) {
-                    sum1 = sum1 +arr[i][k];
-                    k++;
-        }
-
-        System.out.println("sum 1: "+sum);
-        System.out.println("sum 2: "+sum1);
-        System.out.println("sum1 + sum2 = "+(sum1+sum));
+        System.out.println("sum: "+sum);
     }
 }
