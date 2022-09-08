@@ -23,6 +23,7 @@ public class Exercise_1 {
 
 
         //Xóa phần tử của mảng
+//         int[] arr = new int[] {3,2,1,6,9,8};
         System.out.println("enter the element to be deleted: ");
         int deleteElement = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < arrNumbers.length; i++) {
