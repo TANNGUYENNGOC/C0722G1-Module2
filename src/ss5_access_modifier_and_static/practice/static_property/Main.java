@@ -1,4 +1,4 @@
-package ss5.practice.static_property;
+package ss5_access_modifier_and_static.practice.static_property;
 
 public class Main {
     public static void main(String[] args) {
