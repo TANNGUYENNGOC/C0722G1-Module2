@@ -15,7 +15,7 @@ public class Main {
         System.out.println("--------------------");
         movablePoint.setXSpeed(6);
         movablePoint.setYSpeed(7);
-//        movablePoint.setSpeed(7,8);
+//      movablePoint.setSpeed(7,8);
         System.out.println(movablePoint.move());
 
         System.out.println("----------------------");
