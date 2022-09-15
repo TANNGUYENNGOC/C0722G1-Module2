@@ -1,6 +1,6 @@
 package ss7_abstrac_and_interface.excirse.excirse2;
 
-public class Circle extends Geometric implements Colorable{
+public class Circle extends Geometric {
     private double radius;
 
     public Circle(double radius) {
@@ -15,7 +15,4 @@ public class Circle extends Geometric implements Colorable{
         return Math.pow(this.radius,2);
     }
 
-    @Override
-    public void howToColor() {
-    }
 }

@@ -1,6 +1,6 @@
 package ss7_abstrac_and_interface.excirse.excirse2;
 
-public class Retangle extends Geometric implements Colorable{
+public class Retangle extends Geometric{
     private double width;
     private double height;
 
@@ -33,7 +33,4 @@ public class Retangle extends Geometric implements Colorable{
         return this.height*this.width;
     }
 
-    @Override
-    public void howToColor() {
-    }
 }
