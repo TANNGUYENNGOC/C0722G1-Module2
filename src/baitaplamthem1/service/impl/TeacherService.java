@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class TeacherService implements ITeacherService {
     private static Scanner sc = new Scanner(System.in);
-    private static List<Teacher> teacherList = new ArrayList<Teacher>();
+    private static List<Teacher> teacherList = new ArrayList<>();
     private static List<String> genderList = new ArrayList<>(Arrays.asList("Nam","Nữ","nam","nữ","nu","Khác","khac","Trai","Gái","trai","gai"));
     @Override
     public void addTeacher() {
-        Teacher teacher = this.infoTeacher();
+        Teacher teacher = infoTeacher();
         teacherList.add(teacher);
         System.out.println("Thêm mới thành công");
     }
