@@ -21,6 +21,11 @@ public class OtoService implements IOtoService {
     public void removeOto() {
         System.out.println("Nhập biển kiểm soát cần xóa: ");
         String bienKiemSoat = sc.nextLine();
+
+        if (listOto.size() == 0) {
+            System.out.println("Không tìm thấy " + bienKiemSoat + " để xóa");
+            return;
+        }
         for (int i = 0; i < listOto.size(); i++) {
             if (listOto.get(i).getBienKiemSoat().equals(bienKiemSoat)) {
                 System.out.println("Bấm Y để xóa: ");
@@ -28,16 +33,21 @@ public class OtoService implements IOtoService {
                 if (y.equals("Y")) {
                     listOto.remove(i);
                     System.out.println("Xóa thành công");
+                    break;
                 }
-                break;
             }
         }
+
     }
 
     @Override
     public void displayAllOto() {
-        for (Oto oto : listOto) {
-            System.out.println(oto);
+        if(listOto.size()==0){
+            System.out.println("Danh sách ô tô trống, vui lòng thêm mới");
+        } else {
+            for (Oto oto : listOto) {
+                System.out.println(oto);
+            }
         }
     }
 
@@ -65,7 +75,7 @@ public class OtoService implements IOtoService {
         System.out.println("Nhập số chỗ ngồi:");
         int soChoNgoi = Integer.parseInt(sc.nextLine());
         String kieuXe = "";
-        int luaChon ;
+        int luaChon;
         do {
             System.out.println("Nhập kiểu xe: \n" +
                     "1. Xe khách\n" +
@@ -79,7 +89,7 @@ public class OtoService implements IOtoService {
                     kieuXe = "Du lịch";
                     break;
             }
-        }while (luaChon != 1 && luaChon != 2);
+        } while (luaChon != 1 && luaChon != 2);
         Oto oto = new Oto(bienKiemSoat, tenHangSanXuat, namSanXuat, tenChuSoHuu, soChoNgoi, kieuXe);
         return oto;
     }

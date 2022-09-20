@@ -21,11 +21,12 @@ public class Controller {
     public void addPhuongTien(){
         int luaChon;
         do {
-            System.out.println("Bạn muốn thêm phương tiện gì" +
+            System.out.println("Bạn muốn thêm phương tiện gì\n" +
                     "1. Thêm xe tải.\n" +
                     "2. Thêm ôtô. \n" +
                     "3. Thêm  xe máy.\n"+
                     "4. Thoát");
+            System.out.println("--------------------------------------");
             luaChon = Integer.parseInt(sc.nextLine());
             switch (luaChon){
                 case 1:
@@ -45,11 +46,12 @@ public class Controller {
     public void hienThi(){
         int luaChon;
         do {
-            System.out.println("Bạn muốn hiển thị phương tiện gì" +
+            System.out.println("Bạn muốn hiển thị phương tiện gì\n" +
                     "1. Hiển thị xe tải.\n" +
                     "2. Hiển thị ôtô. \n" +
                     "3. Hiển thị  xe máy.\n"+
                     "4. Thoát");
+            System.out.println("-------------------------------------");
             luaChon = Integer.parseInt(sc.nextLine());
             switch (luaChon){
                 case 1:
@@ -74,6 +76,7 @@ public class Controller {
                     "2. Ôtô. \n" +
                     "3. Xe máy.\n"+
                     "4. Thoát");
+            System.out.println("--------------------------------------");
             luaChon = Integer.parseInt(sc.nextLine());
             switch (luaChon){
                 case 1:
@@ -99,5 +102,7 @@ public class Controller {
         xeMayService.searchXeMay(input);
         XeTaiService xeTaiService = new XeTaiService();
         xeTaiService.searchXeTai(input);
+        System.out.println("--------------------------------------");
+
     }
 }

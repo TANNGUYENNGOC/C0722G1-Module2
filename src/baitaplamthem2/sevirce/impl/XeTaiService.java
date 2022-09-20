@@ -13,27 +13,37 @@ public class XeTaiService implements IXeTaiService {
     public void addXeTai() {
         listXeTai.add(infoXeTai());
         System.out.println("Thêm mới xe tải thành công");
+        System.out.println("-----------------------------------------------");
     }
 
     @Override
     public void removeXeTai() {
         System.out.println("Nhập biển kiểm soát");
         String bienkiemSoat = sc.nextLine();
+        if (listXeTai.size() == 0) {
+            System.out.println("Không tìm thấy " + bienkiemSoat + " để xóa");
+            System.out.println("-----------------------------------------------");
+            return;
+        }
         for (int i = 0; i < listXeTai.size(); i++) {
             if(listXeTai.get(i).getBienKiemSoat().equals(bienkiemSoat)){
                 listXeTai.remove(i);
                 System.out.println("Xóa thành công");
-            } else {
-                System.out.println("Xóa ko thành công");
+                break;
             }
         }
     }
 
     @Override
     public void displayAllXeTai() {
-        for (XeTai xeTai: listXeTai) {
-            System.out.println(xeTai);
+        if(listXeTai.size() == 0){
+            System.out.println("Danh sách trống, vui lòng thêm mới");
+        } else {
+            for (XeTai xeTai: listXeTai) {
+                System.out.println(xeTai);
+            }
         }
+
     }
 
     @Override
