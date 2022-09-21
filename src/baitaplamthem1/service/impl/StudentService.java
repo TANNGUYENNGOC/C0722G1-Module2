@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class StudentService implements IStudentService {
     private static Scanner sc = new Scanner(System.in);
     private static List<Student> studentList = new ArrayList<>();
-    private static List<String> genderList = new ArrayList<>(Arrays.asList("Nam","Nữ","nam","nữ","nu","Khác","khac","Trai","Gái","trai","gai"));
+    private static List<String> genderList = new ArrayList<>(Arrays.asList("Nam","Nữ","Khác"));
 
     @Override
     public void addStudent() {

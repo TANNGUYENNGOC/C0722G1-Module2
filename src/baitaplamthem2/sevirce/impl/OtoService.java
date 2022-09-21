@@ -56,8 +56,6 @@ public class OtoService implements IOtoService {
         for (int i = 0; i < listOto.size(); i++) {
             if (listOto.get(i).getBienKiemSoat().contains(bienSo)) {
                 System.out.println(listOto.get(i));
-            } else {
-                System.out.println("Không tìm thấy đối tượng cần tìm");
             }
         }
     }

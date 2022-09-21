@@ -53,8 +53,6 @@ public class XeMayService implements IXeMayService {
         for (int i = 0; i < listXeMay.size(); i++) {
             if (listXeMay.get(i).getBienKiemSoat().contains(bienSo)) {
                 System.out.println(listXeMay.get(i));
-            } else {
-                System.out.println("Không tìm thấy đối tượng cần tìm");
             }
         }
     }

@@ -51,8 +51,6 @@ public class XeTaiService implements IXeTaiService {
         for (int i = 0; i < listXeTai.size(); i++) {
             if(listXeTai.get(i).getBienKiemSoat().contains(bienSoXe)){
                 System.out.println(listXeTai.get(i));
-            } else {
-                System.out.println("Không tìm thấy đối tượng cần tìm");
             }
         }
     }

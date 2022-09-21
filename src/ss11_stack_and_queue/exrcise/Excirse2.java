@@ -10,10 +10,10 @@ public class Excirse2 {
         System.out.println("Nhập vào 1 số ở hệ thập phân");
         int number = Integer.parseInt(sc.nextLine());
         Stack<String> str = new Stack<>();
-        int soDu;
+        int surplus;
         while (number>0){
-            soDu = number%2;
-            str.push(soDu+"");
+            surplus = number%2;
+            str.push(surplus+"");
             number = number/2;
         }
         System.out.println("Số nhị phân là: ");

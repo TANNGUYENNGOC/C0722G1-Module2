@@ -1,7 +1,6 @@
 package ss11_stack_and_queue.exrcise;
 
-import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
-
+import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
