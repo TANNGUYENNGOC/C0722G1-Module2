@@ -49,6 +49,29 @@ public class StudentService implements IStudentService {
         }
     }
 
+    @Override
+    public void searchIDStudent() {
+        System.out.println("Nhập mã học sinh cần tìm");
+        String iD = sc.nextLine();
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getiD().equals(iD)){
+                System.out.println(studentList.get(i));
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void searchNameStudent() {
+        System.out.println("Nhập tên học sinh cần tìm");
+        String name = sc.nextLine();
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getiD().contains(name)){
+                System.out.println(studentList.get(i));
+            }
+        }
+    }
+
 
     public Student infoStudent(){
 

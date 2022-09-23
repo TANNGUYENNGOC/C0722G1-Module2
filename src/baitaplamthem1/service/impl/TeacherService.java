@@ -27,6 +27,29 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
+    public void searchIDTeacher() {
+        System.out.println("Nhập mã giáo viên cần tìm");
+        String iD = sc.nextLine();
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (teacherList.get(i).getiD().equals(iD)){
+                System.out.println(teacherList.get(i));
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void searchNameTeacher() {
+        System.out.println("Nhập giáo viên cần tìm");
+        String name = sc.nextLine();
+        for (int i = 0; i < teacherList.size(); i++) {
+            if (teacherList.get(i).getiD().contains(name)){
+                System.out.println(teacherList.get(i));
+            }
+        }
+    }
+
+    @Override
     public void removeTeacher() {
         System.out.println("Nhập mã giáo viên cần xóa: ");
         String iD = sc.nextLine();
