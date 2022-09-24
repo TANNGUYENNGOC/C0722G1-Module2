@@ -3,14 +3,17 @@ package baitaplamthem1.service.impl;
 import baitaplamthem1.model.Student;
 import baitaplamthem1.service.IStudentService;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class StudentService implements IStudentService {
+public class StudentService implements IStudentService{
     private static Scanner sc = new Scanner(System.in);
-    private static List<Student> studentList = new ArrayList<>();
+    private static Student student1 = new Student("STD1","Nguyễn Ngọc Tấn","26/05/2002","Nam","C0722G1",8);
+    private static Student student2 = new Student("STD3","Nguyễn Văn A","11/03/2000","Nam","C0722G1",5);
+    private static Student student3 = new Student("STD9","Nguyễn Tấn B","29/11/2001","Nam","C0722G1",10);
+    private static Student student5 = new Student("STD3","Hoàng Thị C","21/06/1997","Nữ","C0722G1",7);
+    private static Student student4 = new Student("STD2","Nguyễn LƯơng Yến Nhi","12/08/2004","Nữ","C0722G1",10);
+    private static List<Student> studentList = new ArrayList<>(Arrays.asList(student1,student2,student3,student4,student5));
+
     private static List<String> genderList = new ArrayList<>(Arrays.asList("Nam","Nữ","Khác"));
 
     @Override
@@ -26,6 +29,33 @@ public class StudentService implements IStudentService {
             System.out.println(student);
         }
     }
+
+    @Override
+    public void sortStudent() {
+        for (int i = 0; i < studentList.size() - 1; i++) {
+            Student currentMin = studentList.get(i);
+            int currentMinIndex = i;
+            for (int j = i + 1; j < studentList.size(); j++) {
+                if (currentMin.getName().compareTo(studentList.get(j).getName()) > 0) {
+                    currentMin = studentList.get(j);
+                    currentMinIndex = j;
+                }
+                if (currentMin.getName().compareTo(studentList.get(j).getName()) == 0) {
+                    int compare = currentMin.getiD().compareTo(studentList.get(j).getiD());
+                    if (compare > 0) {
+                        currentMin = studentList.get(j);
+                        currentMinIndex = j;
+                    }
+                }
+            }
+            if (currentMinIndex != i) {
+                studentList.set(currentMinIndex, studentList.get(i));
+                studentList.set(i, currentMin);
+            }
+        }
+        displayAllStudent();
+    }
+
 
     @Override
     public void removeStudent() {

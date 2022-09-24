@@ -38,6 +38,9 @@ public class TeacherController {
                     iTeacherService.searchNameTeacher();
                     break;
                 case 6:
+                    iTeacherService.searchNameTeacher();
+                    break;
+                case 7:
 //                    System.exit(0);
 //                    break;
                     return;

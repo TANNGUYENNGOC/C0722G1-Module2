@@ -18,7 +18,8 @@ public class StudentController {
             System.out.println("3. Xóa học sinh");
             System.out.println("4. Tìm kiếm theo tên học sinh");
             System.out.println("5. Tìm kiếm theo mã học sinh");
-            System.out.println("6. Thoát");
+            System.out.println("6. Hiển thị danh sách đã được sắp xếp theo ID");
+            System.out.println("7. Thoát");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -37,6 +38,9 @@ public class StudentController {
                     iStudentService.searchIDStudent();
                     break;
                 case 6:
+                    iStudentService.sortStudent();
+                    break;
+                case 7:
 //                    System.exit(0);
 //                  break;
                     return;

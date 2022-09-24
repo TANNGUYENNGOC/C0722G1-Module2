@@ -1,6 +1,8 @@
 package baitaplamthem1.model;
 
-public class Student extends Person {
+import java.util.Comparator;
+
+public class Student extends Person implements Comparable{
     private String _class;
     private double point;
 
@@ -39,5 +41,12 @@ public class Student extends Person {
                 "_class='" + _class + '\'' +
                 ", point=" + point +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Object o) {
+        return this.getName().compareTo(((Student) o).getName());
+
     }
 }

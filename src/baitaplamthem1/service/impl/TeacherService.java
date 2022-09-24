@@ -1,22 +1,22 @@
 package baitaplamthem1.service.impl;
 
+import baitaplamthem1.model.Student;
 import baitaplamthem1.model.Teacher;
 import baitaplamthem1.service.ITeacherService;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class TeacherService implements ITeacherService {
     private static Scanner sc = new Scanner(System.in);
     private static List<Teacher> teacherList = new ArrayList<>();
     private static List<String> genderList = new ArrayList<>(Arrays.asList("Nam","Nữ","Khác"));
+
     @Override
     public void addTeacher() {
         Teacher teacher = infoTeacher();
         teacherList.add(teacher);
         System.out.println("Thêm mới thành công");
+
     }
 
     @Override
@@ -71,6 +71,34 @@ public class TeacherService implements ITeacherService {
         }
 
     }
+
+    @Override
+    public void sortTeacher() {
+        for (int i = 0; i < teacherList.size() - 1; i++) {
+            Teacher currentMin = teacherList.get(i);
+            int currentMinIndex = i;
+            for (int j = i + 1; j < teacherList.size(); j++) {
+                if (currentMin.getName().compareTo(teacherList.get(j).getName()) > 0) {
+                    currentMin = teacherList.get(j);
+                    currentMinIndex = j;
+                }
+                if (currentMin.getName().compareTo(teacherList.get(j).getName()) == 0) {
+                    int compare = currentMin.getiD().compareTo(teacherList.get(j).getiD());
+                    if (compare > 0) {
+                        currentMin = teacherList.get(j);
+                        currentMinIndex = j;
+                    }
+                }
+            }
+            if (currentMinIndex != i) {
+                teacherList.set(currentMinIndex, teacherList.get(i));
+                teacherList.set(i, currentMin);
+            }
+        }
+        displayTeacher();
+    }
+
+
     public Teacher infoTeacher(){
 
         System.out.println("Mời bạn nhập mã giáo viên: ");
@@ -90,4 +118,7 @@ public class TeacherService implements ITeacherService {
         Teacher teacher = new Teacher(iD,name,birthday,gender,expertise);
         return teacher;
     }
+
+
+
 }
