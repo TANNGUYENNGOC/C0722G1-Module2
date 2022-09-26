@@ -104,7 +104,6 @@ public class StudentService implements IStudentService{
 
 
     public Student infoStudent(){
-
         System.out.println("Mời bạn nhập mã học sinh: ");
         String iD = sc.nextLine();
         System.out.println("Mời bạn nhập tên học sinh: ");
@@ -119,8 +118,20 @@ public class StudentService implements IStudentService{
         }
         System.out.println("Mời bạn nhập tên lớp: ");
         String nameClass = sc.nextLine();
-        System.out.println("Mời bạn nhập điểm");
-        double point = Double.parseDouble(sc.nextLine());
+        double point;
+        while (true){
+            try {
+                System.out.println("Mời bạn nhập điểm");
+                point = Double.parseDouble(sc.nextLine());
+                while (point < 0 || point > 10){
+                    System.out.println("Vui lòng nhầm điểm trong khoảng từ 0 đến 10");
+                    point = Double.parseDouble(sc.nextLine());
+                }
+                break;
+            } catch (NumberFormatException e){
+                System.out.println("Điểm sai định dạng, nhập lại: ");
+            }
+        }
         Student student = new Student(iD,name,birthday,gender,nameClass,point);
         return student;
     }
