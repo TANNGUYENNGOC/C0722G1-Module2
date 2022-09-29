@@ -34,7 +34,7 @@ public class StudentService implements IStudentService{
     }
 
     @Override
-    public void sortStudent() {
+    public void sortStudent() throws IOException {
         for (int i = 0; i < studentList.size() - 1; i++) {
             Student currentMin = studentList.get(i);
             int currentMinIndex = i;
@@ -56,7 +56,7 @@ public class StudentService implements IStudentService{
                 studentList.set(i, currentMin);
             }
         }
-//        displayAllStudent();
+        displayAllStudent();
     }
 
 
@@ -144,7 +144,7 @@ public class StudentService implements IStudentService{
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
         for (Student s: studentList) {
-            bufferedWriter.write(s.toString());
+            bufferedWriter.write(s.getInfoStudent());
             bufferedWriter.newLine();
         }
         bufferedWriter.close();

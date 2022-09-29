@@ -30,4 +30,7 @@ public class Teacher extends Person{
                 "expertise='" + expertise + '\'' +
                 '}';
     }
+    public String getInfoTeacher(){
+        return String.format("%s,%s,%s,%s,%s",getiD(),getName(),getBirthday(),getGender(),expertise);
+    }
 }

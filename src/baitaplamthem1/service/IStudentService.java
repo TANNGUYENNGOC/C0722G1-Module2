@@ -8,5 +8,5 @@ public interface IStudentService{
     void searchIDStudent();
     void searchNameStudent();
     void displayAllStudent() throws IOException;
-    void sortStudent();
+    void sortStudent() throws IOException;
 }

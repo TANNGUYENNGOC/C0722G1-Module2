@@ -42,7 +42,7 @@ public class Student extends Person implements Comparable{
                 ", point=" + point +
                 '}';
     }
-    public String getInfo(){
+    public String getInfoStudent(){
         return String.format("%s,%s,%s,%s,%s,%s",getiD(), getName(),getBirthday(),getGender(), _class,point);
     }
 

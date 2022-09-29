@@ -4,13 +4,14 @@ package baitaplamthem1.controller;
 import baitaplamthem1.service.ITeacherService;
 import baitaplamthem1.service.impl.TeacherService;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TeacherController {
     private static ITeacherService iTeacherService = new TeacherService();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void menuTeacher() {
+    public static void menuTeacher() throws IOException {
         while (true) {
             System.out.println("-----------------------------------------------------------");
             System.out.println("Chào mừng bạn đến với chương trình quản lý CodeGym");

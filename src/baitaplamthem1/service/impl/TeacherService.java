@@ -4,6 +4,7 @@ import baitaplamthem1.model.Student;
 import baitaplamthem1.model.Teacher;
 import baitaplamthem1.service.ITeacherService;
 
+import java.io.*;
 import java.util.*;
 
 public class TeacherService implements ITeacherService {
@@ -12,15 +13,19 @@ public class TeacherService implements ITeacherService {
     private static List<String> genderList = new ArrayList<>(Arrays.asList("Nam","Nữ","Khác"));
 
     @Override
-    public void addTeacher() {
+    public void addTeacher() throws IOException {
         Teacher teacher = infoTeacher();
         teacherList.add(teacher);
         System.out.println("Thêm mới thành công");
-
+        writeFileTeacher(teacherList);
     }
 
     @Override
-    public void displayTeacher() {
+    public void displayTeacher() throws IOException {
+//        for (Teacher teacher: teacherList) {
+//            System.out.println(teacher);
+//        }
+        teacherList = readFileTeacher();
         for (Teacher teacher: teacherList) {
             System.out.println(teacher);
         }
@@ -73,7 +78,7 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void sortTeacher() {
+    public void sortTeacher() throws IOException {
         for (int i = 0; i < teacherList.size() - 1; i++) {
             Teacher currentMin = teacherList.get(i);
             int currentMinIndex = i;
@@ -119,6 +124,32 @@ public class TeacherService implements ITeacherService {
         return teacher;
     }
 
+    public void writeFileTeacher(List<Teacher> teacherList) throws IOException {
+        File file = new File("D:\\module_2\\src\\baitaplamthem1\\data\\teacher.csv");
+        FileWriter fileWriter = new FileWriter(file);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        for (Teacher teacher: teacherList) {
+            bufferedWriter.write(teacher.getInfoTeacher());
+            bufferedWriter.newLine();
+        }
+        bufferedWriter.close();
+    }
 
+    public List<Teacher> readFileTeacher() throws IOException {
+        File file = new File("D:\\module_2\\src\\baitaplamthem1\\data\\teacher.csv");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
 
+        String line;
+        String info[];
+        Teacher teacher;
+
+        while ((line = bufferedReader.readLine()) != null){
+            info = line.split(",");
+            teacher = new Teacher(info[0],info[1],info[2],info[3],info[4]);
+            teacherList.add(teacher);
+        }
+        bufferedReader.close();
+        return teacherList;
+    }
 }
