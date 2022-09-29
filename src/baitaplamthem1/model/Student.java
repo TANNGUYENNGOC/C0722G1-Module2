@@ -38,9 +38,12 @@ public class Student extends Person implements Comparable{
                 ", name='" + getName() + '\'' +
                 ", birthday='" + getBirthday()+ '\'' +
                 ", gender='" + getGender() + '\'' +
-                "_class='" + _class + '\'' +
+                ", _class='" + _class + '\'' +
                 ", point=" + point +
                 '}';
+    }
+    public String getInfo(){
+        return String.format("%s,%s,%s,%s,%s,%s",getiD(), getName(),getBirthday(),getGender(), _class,point);
     }
 
 

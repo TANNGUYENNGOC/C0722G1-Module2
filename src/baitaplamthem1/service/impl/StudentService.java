@@ -3,6 +3,7 @@ package baitaplamthem1.service.impl;
 import baitaplamthem1.model.Student;
 import baitaplamthem1.service.IStudentService;
 
+import java.io.*;
 import java.util.*;
 
 public class StudentService implements IStudentService{
@@ -17,14 +18,16 @@ public class StudentService implements IStudentService{
     private static List<String> genderList = new ArrayList<>(Arrays.asList("Nam","Nữ","Khác"));
 
     @Override
-    public void addStudent() {
+    public void addStudent() throws IOException {
         Student student = this.infoStudent();
         studentList.add(student);
         System.out.println("Bạn đã thêm mới thành công");
+        writeFileStudent(studentList);
     }
 
     @Override
-    public void displayAllStudent() {
+    public void displayAllStudent() throws IOException {
+       studentList = readFileStudent();
         for (Student student: studentList) {
             System.out.println(student);
         }
@@ -53,7 +56,7 @@ public class StudentService implements IStudentService{
                 studentList.set(i, currentMin);
             }
         }
-        displayAllStudent();
+//        displayAllStudent();
     }
 
 
@@ -135,4 +138,36 @@ public class StudentService implements IStudentService{
         Student student = new Student(iD,name,birthday,gender,nameClass,point);
         return student;
     }
+
+    public void writeFileStudent(List<Student> studentList) throws IOException {
+        File file = new File("D:\\module_2\\src\\baitaplamthem1\\data\\student.csv");
+        FileWriter fileWriter = new FileWriter(file);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        for (Student s: studentList) {
+            bufferedWriter.write(s.toString());
+            bufferedWriter.newLine();
+        }
+        bufferedWriter.close();
+    }
+
+    public List<Student> readFileStudent() throws IOException {
+        studentList = new ArrayList<>();
+        File file = new File("D:\\module_2\\src\\baitaplamthem1\\data\\student.csv");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+        String line;
+        String info[];
+        Student student;
+
+        while ((line = bufferedReader.readLine()) != null){
+            info = line.split(",");
+            student = new Student(info[0],info[1],info[2],info[3],info[4],Double.parseDouble(info[5]));
+
+            studentList.add(student);
+        }
+        bufferedReader.close();
+        return studentList;
+    }
+
 }

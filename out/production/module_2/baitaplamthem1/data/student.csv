@@ -1,0 +1,6 @@
+Student{iD='STD1', name='Nguyễn Ngọc Tấn', birthday='26/05/2002', gender='Nam', _class='C0722G1', point=8.0}
+Student{iD='STD3', name='Nguyễn Văn A', birthday='11/03/2000', gender='Nam', _class='C0722G1', point=5.0}
+Student{iD='STD9', name='Nguyễn Tấn B', birthday='29/11/2001', gender='Nam', _class='C0722G1', point=10.0}
+Student{iD='STD2', name='Nguyễn LƯơng Yến Nhi', birthday='12/08/2004', gender='Nữ', _class='C0722G1', point=10.0}
+Student{iD='STD3', name='Hoàng Thị C', birthday='21/06/1997', gender='Nữ', _class='C0722G1', point=7.0}
+Student{iD='sdfgh', name='ắedrf', birthday='ưer456', gender='Nam', _class='sdfgh', point=3.4}

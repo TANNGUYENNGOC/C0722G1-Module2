@@ -3,13 +3,14 @@ package baitaplamthem1.controller;
 import baitaplamthem1.service.IStudentService;
 import baitaplamthem1.service.impl.StudentService;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class StudentController {
     private static IStudentService iStudentService = new StudentService();
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void menuStudent() {
+    public static void menuStudent() throws IOException {
         while (true) {
             System.out.println("-----------------------------------------------------------");
             System.out.println("Chào mừng bạn đến với chương trình quản lý CodeGym");
