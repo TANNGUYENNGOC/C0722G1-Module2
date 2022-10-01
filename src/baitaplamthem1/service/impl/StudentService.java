@@ -2,6 +2,7 @@ package baitaplamthem1.service.impl;
 
 import baitaplamthem1.model.Student;
 import baitaplamthem1.service.IStudentService;
+import ss16_demo_io_text_file.controller.ReadFile;
 
 import java.io.*;
 import java.util.*;
@@ -35,6 +36,7 @@ public class StudentService implements IStudentService{
 
     @Override
     public void sortStudent() throws IOException {
+        studentList = readFileStudent();
         for (int i = 0; i < studentList.size() - 1; i++) {
             Student currentMin = studentList.get(i);
             int currentMinIndex = i;
@@ -61,7 +63,9 @@ public class StudentService implements IStudentService{
 
 
     @Override
-    public void removeStudent() {
+    public void removeStudent() throws IOException {
+        studentList = readFileStudent();
+
         System.out.println("Nhập mã học viên cần xóa: ");
         String iD = sc.nextLine();
         boolean flagDelete = false;
@@ -76,14 +80,16 @@ public class StudentService implements IStudentService{
                 flagDelete =true;
                 break;
             }
-            if(!flagDelete){
-                System.out.println("Không tìm thấy đối tượng cần xóa.");
-            }
         }
+        if(!flagDelete){
+            System.out.println("Không tìm thấy đối tượng cần xóa.");
+        }
+        writeFileStudent(studentList);
     }
 
     @Override
-    public void searchIDStudent() {
+    public void searchIDStudent() throws IOException {
+        studentList = readFileStudent();
         System.out.println("Nhập mã học sinh cần tìm");
         String iD = sc.nextLine();
         for (int i = 0; i < studentList.size(); i++) {
@@ -95,11 +101,12 @@ public class StudentService implements IStudentService{
     }
 
     @Override
-    public void searchNameStudent() {
+    public void searchNameStudent() throws IOException {
+        studentList = readFileStudent();
         System.out.println("Nhập tên học sinh cần tìm");
         String name = sc.nextLine();
         for (int i = 0; i < studentList.size(); i++) {
-            if (studentList.get(i).getiD().contains(name)){
+            if (studentList.get(i).getName().contains(name)){
                 System.out.println(studentList.get(i));
             }
         }

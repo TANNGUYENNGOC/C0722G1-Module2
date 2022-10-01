@@ -14,6 +14,7 @@ public class TeacherService implements ITeacherService {
 
     @Override
     public void addTeacher() throws IOException {
+        teacherList = readFileTeacher();
         Teacher teacher = infoTeacher();
         teacherList.add(teacher);
         System.out.println("Thêm mới thành công");
@@ -32,7 +33,8 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void searchIDTeacher() {
+    public void searchIDTeacher() throws IOException {
+        teacherList = readFileTeacher();
         System.out.println("Nhập mã giáo viên cần tìm");
         String iD = sc.nextLine();
         for (int i = 0; i < teacherList.size(); i++) {
@@ -44,18 +46,20 @@ public class TeacherService implements ITeacherService {
     }
 
     @Override
-    public void searchNameTeacher() {
+    public void searchNameTeacher() throws IOException {
+        teacherList = readFileTeacher();
         System.out.println("Nhập giáo viên cần tìm");
         String name = sc.nextLine();
         for (int i = 0; i < teacherList.size(); i++) {
-            if (teacherList.get(i).getiD().contains(name)){
+            if (teacherList.get(i).getName().contains(name)){
                 System.out.println(teacherList.get(i));
             }
         }
     }
 
     @Override
-    public void removeTeacher() {
+    public void removeTeacher() throws IOException {
+        teacherList = readFileTeacher();
         System.out.println("Nhập mã giáo viên cần xóa: ");
         String iD = sc.nextLine();
         boolean flagDelete = false;
@@ -70,15 +74,16 @@ public class TeacherService implements ITeacherService {
                 flagDelete =true;
                 break;
             }
-            if(!flagDelete){
-                System.out.println("Không tìm thấy đối tượng cần xóa.");
-            }
         }
-
+        if(!flagDelete){
+            System.out.println("Không tìm thấy đối tượng cần xóa.");
+        }
+          writeFileTeacher(teacherList);
     }
 
     @Override
     public void sortTeacher() throws IOException {
+        teacherList = readFileTeacher();
         for (int i = 0; i < teacherList.size() - 1; i++) {
             Teacher currentMin = teacherList.get(i);
             int currentMinIndex = i;
@@ -136,6 +141,7 @@ public class TeacherService implements ITeacherService {
     }
 
     public List<Teacher> readFileTeacher() throws IOException {
+        teacherList = new ArrayList<>();
         File file = new File("D:\\module_2\\src\\baitaplamthem1\\data\\teacher.csv");
         FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
