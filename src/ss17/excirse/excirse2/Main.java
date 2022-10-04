@@ -69,6 +69,5 @@ public class Main {
         File sourceFile = new File("D:\\module_2\\src\\ss17\\excirse\\excirse2\\source_file.dat");
         File targetFile = new File("D:\\module_2\\src\\ss17\\excirse\\excirse2\\target_file.dat");
         readFile(sourceFile, targetFile);
-        System.out.println("Copy completed");
     }
 }

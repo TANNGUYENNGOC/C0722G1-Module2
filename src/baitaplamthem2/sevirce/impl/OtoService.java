@@ -3,6 +3,7 @@ package baitaplamthem2.sevirce.impl;
 import baitaplamthem2.model.Oto;
 import baitaplamthem2.sevirce.IOtoService;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,6 +11,8 @@ import java.util.Scanner;
 public class OtoService implements IOtoService {
     private static Scanner sc = new Scanner(System.in);
     private static List<Oto> listOto = new ArrayList();
+    private static File fileOto = new File("D:\\module_2\\src\\baitaplamthem2\\data\\Oto.txt");
+    private static Oto oto = new Oto();
 
     @Override
     public void addOto() {
@@ -90,5 +93,42 @@ public class OtoService implements IOtoService {
         } while (luaChon != 1 && luaChon != 2);
         Oto oto = new Oto(bienKiemSoat, tenHangSanXuat, namSanXuat, tenChuSoHuu, soChoNgoi, kieuXe);
         return oto;
+    }
+    public void writeOto(){
+        listOto = readFileOto();
+        try {
+            FileWriter fileWriter = new FileWriter(fileOto);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            for (Oto oto: listOto) {
+//                bufferedWriter.write();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public List<Oto> readFileOto(){
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader(fileOto);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
+            String[] infoOto;
+            Oto oto;
+            while ((line = bufferedReader.readLine())!=null){
+                infoOto = line.split(",");
+                oto = new Oto(infoOto[0],infoOto[1],infoOto[2],infoOto[3],Integer.parseInt(infoOto[4]),infoOto[5]);
+                listOto.add(oto);
+            }
+            fileReader.close();
+            bufferedReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listOto;
+    }
+    public String getInfoOto(){
+        return String.format("%s,%s,%s,%s,%s,%s",oto.getBienKiemSoat());
     }
 }
