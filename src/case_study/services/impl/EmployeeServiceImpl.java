@@ -15,7 +15,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
     static Scanner sc = new Scanner(System.in);
     private static List<Employee> employeeList = new ArrayList<>();
     static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    static ArrayList<String> listLevel = new ArrayList<>(Arrays.asList("Lễ tân", "phục vụ", "chuyên viên", "giám sát", "quản lý", "giám đốc"));
+//    static ArrayList<String> listLevel = new ArrayList<>(Arrays.asList("Lễ tân", "phục vụ", "chuyên viên", "giám sát", "quản lý", "giám đốc"));
 
     @Override
     public void displayList() {
