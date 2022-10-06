@@ -1,7 +1,5 @@
 package case_study.models.facilityModel;
 
-import java.time.LocalDateTime;
-
 public class Villa extends Facility{
     private String roomStandard; //Tiêu chuẩn phòng
     private double poolArea; //Diện tích hồ bơi
@@ -10,7 +8,7 @@ public class Villa extends Facility{
     public Villa() {
     }
 
-    public Villa(String serviceName, double usableArea, double rentalCosts, int maximumNumberOfPeople, LocalDateTime rentalType, String roomStandard, double poolArea, int numberOfFloors) {
+    public Villa(String serviceName, double usableArea, double rentalCosts, int maximumNumberOfPeople, String rentalType, String roomStandard, double poolArea, int numberOfFloors) {
         super(serviceName, usableArea, rentalCosts, maximumNumberOfPeople, rentalType);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
@@ -43,15 +41,14 @@ public class Villa extends Facility{
 
     @Override
     public String toString() {
-        return "Villa{" +
-                "serviceName="+ getServiceName()+"\n"+
-                ", usableArea="+ getUsableArea()+"\n"+
-                ", rentalCosts="+ getRentalCosts()+"\n"+
-                ", MaximumNumberOfPeople="+getMaximumNumberOfPeople()+"\n"+
-                ", rentalType="+ getRentalType()+"\n"+
-                ", roomStandard='" + roomStandard + '\'' +
-                ", poolArea=" + poolArea +
-                ", numberOfFloors=" + numberOfFloors +
-                '}';
+        return
+                "serviceName="+ getServiceName()+"\t"+
+                ", usableArea="+ getUsableArea()+"\t"+
+                ", rentalCosts="+ getRentalCosts()+"\t"+
+                ", MaximumNumberOfPeople="+getMaximumNumberOfPeople()+"\t"+
+                ", rentalType="+ getRentalType()+"\t"+
+                ", roomStandard='" + roomStandard + "\t" +
+                ", poolArea=" + poolArea + "\t" +
+                ", numberOfFloors=" + numberOfFloors;
     }
 }

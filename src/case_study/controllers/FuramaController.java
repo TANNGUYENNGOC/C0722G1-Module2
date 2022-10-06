@@ -3,10 +3,11 @@ package case_study.controllers;
 import java.util.Scanner;
 
 public class FuramaController {
-    public void displayMainMenu(){
+    public static void displayMainMenu(){
         Scanner sc = new Scanner(System.in);
         EmployeeController employeeController = new EmployeeController();
         CustomerController customerController = new CustomerController();
+        FacilityController facilityController = new FacilityController();
         int choose;
         do {
             while (true) {
@@ -34,6 +35,7 @@ public class FuramaController {
                     customerController.displayMenuCustomer();
                     break;
                 case 3:
+                    facilityController.displayMenuFacility();
                     break;
                 case 4:
                     break;

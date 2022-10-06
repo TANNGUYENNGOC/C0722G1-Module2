@@ -1,9 +1,14 @@
 package case_study.controllers;
 
+import case_study.models.facilityModel.House;
+import case_study.services.impl.FacilityServiceImpl;
+
 import java.util.Scanner;
 
 public class FacilityController {
-    public void displayMenuFacility() {
+    private FacilityServiceImpl facilityService = new FacilityServiceImpl();
+
+    public  void displayMenuFacility() {
 
         Scanner sc = new Scanner(System.in);
         int choose;
@@ -24,12 +29,15 @@ public class FacilityController {
             }
             switch (choose) {
                 case 1:
+                    facilityService.displayList();
                     break;
                 case 2:
+                    addNewFacility();
                     break;
                 case 3:
                     break;
                 case 4:
+                    FuramaController.displayMainMenu();
                     break;
                 default:
                     System.out.println("please re-enter: ");
@@ -39,6 +47,32 @@ public class FacilityController {
 
         } while (true);
 
+    }
+    public void addNewFacility(){
+        Scanner sc = new Scanner(System.in);
+        int choose;
+        do {
+            System.out.println("1. \tAdd New Villa\n" +
+                    "2. \tAdd New House\n" +
+                    "3. \tAdd New Room\n" +
+                    "4. \tBack to menu");
+            System.out.println("What are your options?");
+            choose = Integer.parseInt(sc.nextLine());
+            switch (choose){
+                case 1:
+                    facilityService.addNewVilla();
+                    break;
+                case 2:
+                    facilityService.addNewHouse();
+                    break;
+                case 3:
+                    facilityService.addNewRoom();
+                    break;
+                case 4:
+                    FuramaController.displayMainMenu();
+                    break;
+            }
 
+        }while (true);
     }
 }

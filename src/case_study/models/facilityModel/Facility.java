@@ -1,19 +1,17 @@
 package case_study.models.facilityModel;
 
-import java.time.LocalDateTime;
-
 public abstract class Facility {
     // class cơ sở vật chất
     private String serviceName; //Tên dịch vụ
     private double usableArea; //Diện tích sử dụng
     private double rentalCosts;//Chi phí thuê
     private int MaximumNumberOfPeople; //SỐ lượng người tối đa
-    private LocalDateTime rentalType; //Kiểu thuê (bao gồm thuê theo ngày, tháng, năm, giờ)
+    private String rentalType; //Kiểu thuê (bao gồm thuê theo ngày, tháng, năm, giờ)
 
     public Facility() {
     }
 
-    public Facility(String serviceName, double usableArea, double rentalCosts, int maximumNumberOfPeople, LocalDateTime rentalType) {
+    public Facility(String serviceName, double usableArea, double rentalCosts, int maximumNumberOfPeople, String rentalType) {
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
@@ -53,11 +51,11 @@ public abstract class Facility {
         MaximumNumberOfPeople = maximumNumberOfPeople;
     }
 
-    public LocalDateTime getRentalType() {
+    public String getRentalType() {
         return rentalType;
     }
 
-    public void setRentalType(LocalDateTime rentalType) {
+    public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
 
