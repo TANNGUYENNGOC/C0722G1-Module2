@@ -1,0 +1,29 @@
+
+a
+java:S1192"FDefine a constant instead of duplicating this literal "seven" 3 times.(ôéå˜øÿÿÿÿ
+a
+java:S1192"FDefine a constant instead of duplicating this literal "three" 4 times.(ôéå˜øÿÿÿÿ
+a
+java:S1192"FDefine a constant instead of duplicating this literal "eight" 3 times.(ôéå˜øÿÿÿÿ
+b
+java:S1192"GDefine a constant instead of duplicating this literal "twenty" 3 times.(èôËíıÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ş…®—
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ššøüÿÿÿÿ
+@
+java:S1197"*Move the array designators [] to the type.(´¯„ê
+S	java:S106
+"9Replace this use of System.out or System.err by a logger.(¶ä“œşÿÿÿÿ
+E
+java:S1197"*Move the array designators [] to the type.(èôËíıÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(®êÔ™
+E
+java:S1197"*Move the array designators [] to the type.(¹°Íßÿÿÿÿÿ
+E
+java:S1197"*Move the array designators [] to the type.(ÈµÖ‰ÿÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ö‰Ÿú
+E
+java:S1197"*Move the array designators [] to the type.(‘×œûÿÿÿÿÿ
+@
+java:S1197"*Move the array designators [] to the type.(­‡
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(ºç³™
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(‚Š¨íûÿÿÿÿ

@@ -37,8 +37,7 @@ public class EmployeeController {
                     iEmployeeService.editInfoEmployee();
                     break;
                 case 4:
-                    furamaController.displayMainMenu();
-                    break;
+                     break;
                 default:
                     System.out.println("please re-enter");
                     choose = Integer.parseInt(sc.nextLine());

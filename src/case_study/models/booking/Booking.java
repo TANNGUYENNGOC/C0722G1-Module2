@@ -2,7 +2,7 @@ package case_study.models.booking;
 
 import java.time.LocalDate;
 
-public class Booking {
+public class Booking implements Comparable{
     private String iDBooking;
     private LocalDate dayStart;
     private LocalDate dayEnd;
@@ -72,13 +72,22 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "iDBooking='" + iDBooking + '\'' +
+        return
+                "iDBooking='" + iDBooking + "\t" +
                 ", dayStart=" + dayStart +
                 ", dayEnd=" + dayEnd +
-                ", iDcustomer='" + iDcustomer + '\'' +
-                ", nameService='" + nameService + '\'' +
-                ", serviceType='" + serviceType + '\'' +
-                '}';
+                ", iDcustomer='" + iDcustomer + "\t" +
+                ", nameService='" + nameService + "\t" +
+                ", serviceType='" + serviceType + "\t";
+    }
+
+    @Override
+    public int compareTo(Object o) {
+       Booking booking = (Booking)o;
+        if (booking.getDayStart().compareTo(this.getDayStart())==0){
+            return (booking.getDayEnd().compareTo(this.getDayEnd()));
+        }else {
+            return (booking.getDayStart().compareTo(this.getDayStart()));
+        }
     }
 }

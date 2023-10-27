@@ -1,10 +1,13 @@
 package case_study.controllers;
 
+import case_study.services.impl.BookingServiceImpl;
+
 import java.util.Scanner;
 
 public class BookingController {
     public void displayMenuBooking(){
         Scanner sc = new Scanner(System.in);
+        BookingServiceImpl bookingService = new BookingServiceImpl();
         int choose;
         do {
             while (true){
@@ -25,8 +28,10 @@ public class BookingController {
             }
             switch (choose){
                 case 1:
+                    bookingService.displayList();
                     break;
                 case 2:
+                    bookingService.addElement();
                     break;
                 case 3:
                     break;

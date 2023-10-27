@@ -1,0 +1,16 @@
+
+S
+java:S1659">Declare "b" and all following declarations on a separate line.(Èáô
+S	java:S106	"9Replace this use of System.out or System.err by a logger.(÷ªÉ‰þÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(†ù†‰
+N	java:S106"9Replace this use of System.out or System.err by a logger.(†ù†‰
+B
+java:S1125"'Remove the unnecessary boolean literal.(ªùòÂùÿÿÿÿ
+M	java:S106"9Replace this use of System.out or System.err by a logger.(ì‘ÿQ
+\
+java:S1126"AReplace this if-then-else statement by a single return statement.(›«úÃýÿÿÿÿ
+C
+java:S1172!"(Remove this unused method parameter "c".(ÐËâ«ûÿÿÿÿ
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(ŠîˆÐúÿÿÿÿ
+S	java:S106&"9Replace this use of System.out or System.err by a logger.(ÿ° ’þÿÿÿÿ
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(ª‹÷Ò

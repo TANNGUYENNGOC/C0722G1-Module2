@@ -1,0 +1,10 @@
+
+n
+java:S1488S"YImmediately return this expression instead of assigning it to the temporary variable "c".(ß‰ð}
+Q	java:S125+"<This block of commented-out lines of code should be removed.(ôƒ˜…
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(›²®©úÿÿÿÿ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(çëñ ÿÿÿÿÿ
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(çëñ ÿÿÿÿÿ
+M	java:S106K"9Replace this use of System.out or System.err by a logger.(Äüò
+L
+java:S1172R"/Remove these unused method parameters "a", "b".(‚ðåÄ8ŽÜâƒ1

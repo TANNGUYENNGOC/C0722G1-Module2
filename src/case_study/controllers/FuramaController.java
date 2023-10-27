@@ -8,6 +8,7 @@ public class FuramaController {
         EmployeeController employeeController = new EmployeeController();
         CustomerController customerController = new CustomerController();
         FacilityController facilityController = new FacilityController();
+        BookingController bookingController = new BookingController();
         int choose;
         do {
             while (true) {
@@ -38,6 +39,7 @@ public class FuramaController {
                     facilityController.displayMenuFacility();
                     break;
                 case 4:
+                    bookingController.displayMenuBooking();
                     break;
                 case 5:
                     break;

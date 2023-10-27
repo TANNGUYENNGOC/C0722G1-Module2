@@ -23,7 +23,7 @@ public class WriteFileHouseUtils {
             for (House house1: house) {
                 bufferedWriter.write(FacilityServiceImpl.getInfoHouse(house1));
                 bufferedWriter.newLine();
-//                bufferedWriter.close();
+
             }
         } catch (IOException e){
             e.getMessage();

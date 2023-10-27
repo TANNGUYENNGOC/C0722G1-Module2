@@ -1,0 +1,14 @@
+
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ş…®—
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Âç
+N	java:S106
+"9Replace this use of System.out or System.err by a logger.(ÓÖìö
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÅûÉ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(µßû
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‚˜á®şÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¾çÎˆ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ºşû¸úÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÿ±í²ûÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‚˜á®şÿÿÿÿ
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ

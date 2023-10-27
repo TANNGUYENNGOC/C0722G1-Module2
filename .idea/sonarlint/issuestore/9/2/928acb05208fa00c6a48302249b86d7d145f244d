@@ -1,0 +1,6 @@
+
+[
+java:S5993"9Change the visibility of this constructor to "protected".(‚Ηϊωϋÿÿÿÿ8 β†λ1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(φωΉ„ύÿÿÿÿ8ν†λ1
+E
+java:S1068"(Remove this unused "name" private field.(Λ¥Ό8ν†λ1
